@@ -14,7 +14,9 @@ provider "aws" {
 
 resource "aws_s3_bucket" "new_bucket" {
   bucket = "demo-github-action-tf-medium03"
-
+  website {
+  index_document = "index.html"
+}
   object_lock_enabled = false
 
   tags = {
