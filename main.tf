@@ -1,4 +1,10 @@
 terraform {
+    cloud {
+        organization = "medium-tf-test" /// replace with your organization name
+        workspaces {
+          name = "medium-test-workspace" /// replace with your workspace name
+        }
+      }
   required_providers {
     aws = {
       source  = "hashicorp/aws"
@@ -14,9 +20,7 @@ provider "aws" {
 
 resource "aws_s3_bucket" "new_bucket" {
   bucket = "demo-github-action-tf-medium04"
-  website {
-  index_document = "index.html"
-}
+
   object_lock_enabled = false
 
   tags = {
