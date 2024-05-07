@@ -38,7 +38,8 @@ jobs:
     - name: Terraform Plan
       env:
           TF_CLI_ARGS: "-input=false"
-      run: terraform plan -input=false -lock=false -var="token=${{ secrets.PERSONAL_ACCESS_TOKEN }}"
+          TF_VAR_token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+      run: terraform plan -input=false -lock=false 
 
 
       # On push to "main", build or change infrastructure according to Terraform configuration files
