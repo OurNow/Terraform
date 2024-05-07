@@ -1,8 +1,8 @@
 terraform {
     cloud {
-        organization = "medium-tf-test" /// replace with your organization name
+        organization = "ourdevops" 
         workspaces {
-          name = "medium-test-workspace" /// replace with your workspace name
+          name = "test-workspace" 
         }
       }
   required_providers {
@@ -15,7 +15,7 @@ terraform {
 
 # Configure the AWS Provider
 provider "aws" {
-  region = "ap-south-1" # define region as per your account
+  region = "ap-south-1" 
 }
 
 resource "aws_s3_bucket" "new_bucket" {
