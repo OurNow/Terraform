@@ -1,16 +1,21 @@
 terraform {
-    cloud {
-        organization = "ourdevops" 
-        workspaces {
-          name = "test-workspace" 
-        }
-      }
+  cloud {
+    organization = "ourdevops" 
+    workspaces {
+      name = "test-workspace" 
+    }
+  }
   required_providers {
     aws = {
       source  = "hashicorp/aws"
       version = "4.12.1"
     }
   }
+}
+
+# Variable block
+variable "token" {
+  description = "Personal access token"
 }
 
 # Configure the AWS Provider
